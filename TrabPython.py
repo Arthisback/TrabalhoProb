@@ -17,8 +17,8 @@ Digite 0 para sair\n""")
             q = 1 - p2
             qexp = n - x
             combination = math.factorial(n) // (math.factorial(n - x) * math.factorial(x))
-            result = (combination * pow(p2, x) * pow(q, qexp))*100
-            print("A probabilidade é de: {:.2f}".format(result))
+            result = combination * pow(p2, x) * pow(q, qexp)
+            print("A probabilidade é de: {:.4f}".format(result))
             print("\n")
 
         elif prob == '2':
@@ -31,14 +31,12 @@ Digite 0 para sair\n""")
             cumulative_prob = 0
             for i in range(x_min, x_max + 1):
                 combination = math.factorial(n) // (math.factorial(n - i) * math.factorial(i))
-                result = (combination * pow(p2, i) * pow(q, n - i))*100
+                result = combination * pow(p2, i) * pow(q, n - i)
                 cumulative_prob += result
-            print("A probabilidade acumulada para", i, "casos favoráveis é de: {:.2f}".format(cumulative_prob))
+                print("A probabilidade acumulada para", i, "casos favoráveis é de: {:.4f}".format(cumulative_prob))
             print("\n")
         else:
-            print("Opção inválida.")
-
-
+            print("Opção inválida.\n")
 
 if __name__ == '__main__':
     main()
